@@ -6,6 +6,7 @@ body
 }
 
 .header{
+    z-index: 2;
     position: sticky;
     top: 0;
     text-align: center;
@@ -32,15 +33,62 @@ body
 {
     text-align:center;
     min-width: 100px;
-    text-decoration: none;
+    
     color: white;
     padding: 25px;
 }
 
-.menu-item:hover{
+a{
+    text-decoration: none;
+}
+
+a:hover{
     color: grey;
 }
 
-.background {
-    color: grey;
+.content
+{
+    position: relative;
+    margin-top:50px;
+    max-width: 1025px;
+    margin:auto auto 100px auto;
+    
 }
+
+.descriptor-container
+{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;    
+}
+
+.descriptor
+{
+    padding: 20px;
+    border: 2px black solid;
+    background-color: lightgrey;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.descriptor:hover
+{
+    color: white;
+    background-color: black;
+}
+
+img
+{
+    max-width: 1025px;
+    margin:auto;
+}
+
+.jo-background 
+{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
