@@ -6,76 +6,97 @@
    href = "portfolio.css" />
 </head>
 <body>
+<div class="header">
+<div class="header-content">
+    <span><h1>JO GODFREY</h1></span>
+    <ul class="navigation-bar">
+            <li class="navigation-link">All</li>
+            <li class="navigation-link">Experience</li>
+            <li class="navigation-link">Project</li>
+            <li class="navigation-link">Photography</li>
+            <li class="navigation-link">Film</li>
+            <li class="navigation-link">Research</li>
+        </ul>
+</div>
+</div>
+<div class="page-contents">
 
-   <div class="header">
-         <a href="index.html"><h1 class="heading">JO GODFREY</h1></a>
-      <div class="menu">
-         <a href="experience.html" class="menu-item">EXPERIENCE</a>
-         <a href="projects.html" class="menu-item">PROJECTS</a>
-      </div>
-   </div>
-
-<div class="content descriptor-container">
-<p class="descriptor">Based in Bath/Bristol</p>
-<p class="descriptor">Film Maker</p>
-<p class="descriptor">VR Enthusiast</p>
-<p class="descriptor">Web Developer</p>
-<p class="descriptor">Physics Graduate</p>
-<p class="descriptor">Graduate of Cardiff University</p>
-<p class="descriptor">Serial Hobbyist</p>
+<div class=content-block>
+    <p id="test" class="content-type experience"></p>
+    <h3>Tech Girl</h3>
+    <h4> Inspiring young girls to get involved in tech with creative coding workshop </h4>
+    <p> 
+        I prepared two workshops for girls in primary schools with the aim to inspire and interest in coding. I had recently discovered Processing.io as a tool to code creatively in. As it inheiritly inspires playfulness and curiousity I decided to work with this tool. 
+        I found that encouraging the girls to tweak parts of the code and work out what the parameters did them selves gave them the confidence to go and do their own thing with it.
+    </p>
 </div>
 
-<div class="experiences">
-
-<div class="experience-block">
-      <h3>Sofar Sounds Bristol</h3>
-      <h4>Photographer, Videographer and Editor</h4>
-   <p>Capturing the atmosphere and experience of the shows </p>
-   <h4>Show lead and Artist Liason</h4>
-   <p> Ensuring the smooth running of intimate concerts in unusual spaces. </p>
-   
+<div class=content-block>
+    <p class="content-type film"></p>
+    <h3>Music Video</h3>
+    <h4>Creative music video</h4>
+    <p>
+         After hearing her play at a concert with Sofar Sounds I approached Kerensa to discuss collaborating on making a music video. We met up for a discussion in which she showed me some of her new music and her ideas for them. We story boarded this together and came up with some ideas to work on.</a>
+    </p>
 </div>
 
-<div class="experience-block">
-   <h3>FuturePlay</h3>
-   <h4>Sensory Technician</h4>
-<p> Trained to operate the multisensory experience of Munduruku </p>
-<h4>VR Gallery Host Supervisor</h4>
-<p>Ensuring the smooth operation of the VR gallery at the Edinurgh Fringe Festival</p>
+<div class=content-block>
+        <p class="content-type research film"></p>
+        <h3>Science Communication Research</h3>
+        <h4>Investigation and creation of gamification in educational videos</h4>
+        <p> 
+            As an approach to find out how we can get the most educational benefit out of media that young people are comfortable with I conducted research and created three educational videos.
+            The videos were based around the techniques we use to capture electromagnetic information from space. I incorporated some detectors and tools that were currently being improved upon in Cardiff Universities department of Physics and Astronomy. 
+         </p>
+    </div>
+
+    <div class=content-block>
+            <p class="content-type photography"></p>
+            <h3>Live Music Photography</h3>
+            <h4>Capturing intimate live music events for Sofar Sounds</h4>
+            <p> 
+                Images captured for Sofar Sounds Bristol with an emphasis on capturing the atmostphere followed by a lot of images of sofar gigs.. or one of these per gig? 
+            </p>
+        </div>
+    
+    <div class=content-block>
+            <p class="content-type experience"></p>
+            <h3>Tech Girl</h3>
+            <h4> Inspiring young girls to get involved in tech with creative coding workshop </h4>
+            <p> 
+                I prepared two workshops for girls in primary schools with the aim to inspire and interest in coding. I had recently discovered Processing.io as a tool to code creatively in. As it inheiritly inspires playfulness and curiousity I decided to work with this tool. 
+                I found that encouraging the girls to tweak parts of the code and work out what the parameters did them selves gave them the confidence to go and do their own thing with it.
+            </p>
+    </div>
 </div>
-
-<div class="experience-block">
-      <h3>Bringing Astronomy to a Wider Audience</h3>
-      <h4>Research</h4>
-   <p>Carried out scientific research into </p>
-   <h4>Creation of Educational Content</h4>
-   <p>Created a series of videos that implemented the reseath that I carried out</p>
-</div>
-
-<div class="experience-block">
-      <h3>Diff Films</h3>
-   <h4>Producing Many Films</h4>
-   <p>I executive produced many many films</p>
-</div>
-
-<div class="experience-block">
-      <h3>Film Making</h3>
-   <h4>Making Many Films</h4>
-   <p>I executive produced many many films</p>
-</div>
-
-
-<!-- <div class="jo-background">
-<img src="images/jo.jpg"></img>
-</div> -->
-
-</div>
-
-
-
-
-
-
 
 </body>
 </html>
+
+<script >
+    experience = "experience"
+
+    SetContentBlockType(experience, "Experience");
+    SetContentBlockType("film", "Film");
+    SetContentBlockType("photography", "Photography");
+    SetContentBlockType("research", "Research");
+    // OnlyShowBlocksOfType(experience)
+
+    function SetContentBlockType(className, DisplayText)
+    {
+        var experienceBlocks = document.getElementsByClassName(className);
+        for(var i=0; i < experienceBlocks.length; ++i)
+        {          
+        experienceBlocks[i].innerHTML = experienceBlocks[i].innerHTML? experienceBlocks[i].innerHTML+ " + " + DisplayText : DisplayText;
+        }
+    }
+
+    // function OnlyShowBlocksOfType(type)
+    // {
+    //     var contentBlocks = document.getElementsByClassName(type);
+    //     contentBlocks[0].setAttribute(display:none);
+    // }
+    
+
+
+</script>
