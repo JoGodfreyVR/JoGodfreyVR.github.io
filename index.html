@@ -1,35 +1,74 @@
+
 <!DOCTYPE html>
 <html>
 <head>
    <link rel = "stylesheet"
    type = "text/css"
    href = "portfolio.css" />
+   <!-- ADD META TAGS for google -->
 </head>
 <body>
 <div class="header">
 <div class="header-content">
     <span><h1>JO GODFREY</h1></span>
     <ul class="navigation-bar">
-            <li class="navigation-link">All</li>
-            <li class="navigation-link">Experience</li>
+            <li class="navigation-link" onclick="ShowAllContentBlocks()"> All</li>
+            <li class="navigation-link" onclick="HideAllContentBlocks()">None</li>
+            <li class="navigation-link" onclick="ShowOnlyContentBlocksOfType(code)">Code</li>
             <li class="navigation-link">Project</li>
             <li class="navigation-link">Photography</li>
             <li class="navigation-link">Film</li>
             <li class="navigation-link">Research</li>
+            <li class="navigation-link">Volunteering</li>
+            <li class="navigation-link">VR</li>
         </ul>
 </div>
 </div>
 <div class="page-contents">
 
 <div class=content-block>
-    <p id="test" class="content-type experience"></p>
+    <p id="test" class="content-type experience code"></p>
     <h3>Tech Girl</h3>
     <h4> Inspiring young girls to get involved in tech with creative coding workshop </h4>
+    <p class="date"> March 2019 </p>
     <p> 
         I prepared two workshops for girls in primary schools with the aim to inspire and interest in coding. I had recently discovered Processing.io as a tool to code creatively in. As it inheiritly inspires playfulness and curiousity I decided to work with this tool. 
         I found that encouraging the girls to tweak parts of the code and work out what the parameters did them selves gave them the confidence to go and do their own thing with it.
     </p>
 </div>
+
+<div class=content-block>
+        <p id="test" class="content-type voluntering VR"></p>
+        <h3>Encounters Film Festival</h3>
+        <h4>Working in the Limina VR theatre as part of the short film and immersion festival in Bristol</h4>
+        <p class="date"> October 2019 </p>
+        <p> 
+            Assisiting with the running of the cinema, guests arriving and ensuring the safety and comfort of the guests during the experiences.
+        </p>
+    </div>
+
+    
+<div class=content-block>
+        <p id="test" class="content-type voluntering film"></p>
+        <h3>Cardiff Independent Film Festival</h3>
+        <h4>Running a student category and panel for submitted films</h4>
+        <p class="date"> ??? </p>
+        <p> 
+            Assisting with the running of the film festival held at Chapter Arts Centre in Cardiff. 
+            Filtering though the wealth of submitted films as well as selecting films for the student film category set up by myself and my fellow society committee members.
+
+        </p>
+    </div>
+
+<div class=content-block>
+        <p id="test" class="content-type code experience"></p>
+        <h3>Graduate Web Developer At Valtech</h3>
+        <h4> Completed training and worked as a web developer on enterprise websites </h4>
+        <p class="date"> December 2018 - Present </p>
+        <p> 
+            Job as a website developer working with an agile system to develop and roll out a global platform for Just Eat
+        </p>
+    </div>
 
 <div class=content-block>
     <p class="content-type film"></p>
@@ -41,17 +80,17 @@
 </div>
 
 <div class=content-block>
-        <p class="content-type research film"></p>
-        <h3>Science Communication Research</h3>
-        <h4>Investigation and creation of gamification in educational videos</h4>
-        <p> 
-            As an approach to find out how we can get the most educational benefit out of media that young people are comfortable with I conducted research and created three educational videos.
-            The videos were based around the techniques we use to capture electromagnetic information from space. I incorporated some detectors and tools that were currently being improved upon in Cardiff Universities department of Physics and Astronomy. 
-         </p>
-    </div>
+    <p class="content-type research film"></p>
+    <h3>Science Communication Research</h3>
+    <h4>Investigation and creation of gamification in educational videos</h4>
+    <p> 
+        As an approach to find out how we can get the most educational benefit out of media that young people are comfortable with I conducted research and created three educational videos.
+        The videos were based around the techniques we use to capture electromagnetic information from space. I incorporated some detectors and tools that were currently being improved upon in Cardiff Universities department of Physics and Astronomy. 
+    </p>
+</div>
 
-    <div class=content-block>
-            <p class="content-type photography"></p>
+<div class=content-block>
+    <p class="content-type photography"></p>
             <h3>Live Music Photography</h3>
             <h4>Capturing intimate live music events for Sofar Sounds</h4>
             <p> 
@@ -60,12 +99,20 @@
         </div>
     
     <div class=content-block>
-            <p class="content-type experience"></p>
-            <h3>Tech Girl</h3>
-            <h4> Inspiring young girls to get involved in tech with creative coding workshop </h4>
-            <p> 
-                I prepared two workshops for girls in primary schools with the aim to inspire and interest in coding. I had recently discovered Processing.io as a tool to code creatively in. As it inheiritly inspires playfulness and curiousity I decided to work with this tool. 
-                I found that encouraging the girls to tweak parts of the code and work out what the parameters did them selves gave them the confidence to go and do their own thing with it.
+        <p class="content-type film"></p>
+        <h3>Cardiff University A Capella Winter Showcase</h3>
+        <h4>Live Performance Recording</h4>
+        <p>
+            I single-handedly recorded video and audio as well as edting performances from the Cardiff University Winter showcase comprising of over twenty songs over the course of an evening. This took some stategic planning and preparedness.
+        </p>
+    </div>
+
+    <div class=content-block>
+            <p class="content-type film"></p>
+            <h3>Cardiff University A Capella Audition videos </h3>
+            <h4>Live Performance Recording</h4>
+            <p>
+                I recorded music performances for the Cardiff university accepella groups to enter into national competitions.  
             </p>
     </div>
 </div>
@@ -76,14 +123,58 @@
 <script >
     experience = "experience"
 
+    var contentPiece = new Object();
+    //contentPiece.
+
     SetContentBlockType(experience, "Experience");
     SetContentBlockType("film", "Film");
     SetContentBlockType("photography", "Photography");
     SetContentBlockType("research", "Research");
-    // OnlyShowBlocksOfType(experience)
+    SetContentBlockType("code", "Code");
+    SetContentBlockType("VR", "VR");
+    SetContentBlockType("voluntering", "Voluntering");
 
-    function SetContentBlockType(className, DisplayText)
+    function ShowOnlyContentBlocksOfType(type)
     {
+        var experienceBlocks = document.getElementsByClassName("content-block");
+            for(var i=0; i< experienceBlocks.length; ++i)
+            {                
+                if (experienceBlocks[i].firstChild.className === type)
+                {
+                experienceBlocks[i].style.display = "block";
+                }
+                else
+                {
+                experienceBlocks[i].style.display = "none";
+                }
+            }
+    }
+
+    function ShowAllContentBlocks()
+    {
+        var experienceBlocks = document.getElementsByClassName("content-block");
+            for(var i=0; i< experienceBlocks.length; ++i)
+            {
+                experienceBlocks[i].style.display = "block";
+            }
+    }
+
+    function HideAllContentBlocks()
+    {
+        var experienceBlocks = document.getElementsByClassName("content-block");
+            for(var i=0; i< experienceBlocks.length; ++i)
+            {
+                experienceBlocks[i].style.display = "none";
+            }
+    }
+
+    var experienceBlocks = document.getElementsByClassName("film")
+    for(var i=0; i< experienceBlocks.length; ++i)
+    {
+        experienceBlocks[i].parentElement.hide();
+    }
+
+    function SetContentBlockType(className, DisplayText){
         var experienceBlocks = document.getElementsByClassName(className);
         for(var i=0; i < experienceBlocks.length; ++i)
         {          
